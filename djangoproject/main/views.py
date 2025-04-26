@@ -3,13 +3,13 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the main index.")
+    return render(request, 'main/index.html')
 
 def new(request):
-    return HttpResponse("second page")
+    return render(request, 'main/new.html')
 
-def data(request):
-    return HttpResponse("data")
+def catalog(request):
+    return render(request, 'main/catalog.html')
 
-def test(request):
-    return HttpResponse("test")
+def shop(request):
+    return render(request, 'main/shop.html')

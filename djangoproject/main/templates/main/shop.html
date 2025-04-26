@@ -1,0 +1,39 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Магазин японского чая</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4"><i class="fas fa-store text-danger me-2"></i>Наш магазин</h1>
+    
+    <div class="alert alert-info">
+        <h4><i class="fas fa-info-circle me-2"></i>Скоро открытие!</h4>
+        <p>Мы готовим для вас лучшие сорта японского чая. Оставьте email, чтобы получить уведомление:</p>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Ваш email">
+            <button class="btn btn-danger" type="button">Подписаться</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h4><i class="fas fa-map-marker-alt text-danger me-2"></i>Наш адрес</h4>
+            <p>г. Токио, район Сибуя, ул. Чайная, 42</p>
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747798533309!2d139.7105144152584!3d35.65858048019964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b57efbd57c7%3A0x217e9d9fe306fba!2z0KXQsNC90LjRhtCw!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4><i class="fas fa-clock text-danger me-2"></i>Часы работы</h4>
+            <ul class="list-unstyled">
+                <li><strong>Пн-Пт:</strong> 10:00 - 20:00</li>
+                <li><strong>Сб-Вс:</strong> 11:00 - 18:00</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,191 @@
+/* Основные цвета */
+:root {
+  --primary: #e74c3c;    /* Красный сакуры */
+  --primary-light: #fadbd8; /* Светло-красный */
+  --secondary: #2c3e50;  /* Темно-синий */
+  --light: #f8f9fa;      /* Светлый фон */
+  --white: #ffffff;      /* Белый */
+  --dark: #212529;       /* Темный текст */
+  --gray: #6c757d;       /* Серый текст */
+  --light-gray: #e9ecef; /* Светло-серый */
+}
+
+/* Базовые стили */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер сайдбаров и контента */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Левый сайдбар */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: var(--white);
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding: 20px 0;
+}
+
+/* Навигационное меню */
+.nav-vertical {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  margin: 0 10px;
+  color: var(--dark);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.nav-link:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.nav-link.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.nav-link i {
+  width: 24px;
+  text-align: center;
+  margin-right: 12px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.nav-link.active i,
+.nav-link:hover i {
+  color: inherit;
+}
+
+.nav-text {
+  margin-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Правый сайдбар */
+.right-sidebar {
+  width: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Основное содержимое */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--light);
+}
+
+/* Мобильное меню */
+.mobile-nav {
+  background: var(--white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 1199px) {
+  .right-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+
+  .nav-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: var(--light-gray);
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    padding: 20px 15px;
+  }
+
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .nav-link i {
+    margin-right: 8px;
+  }
+}
+
+/* Дополнительные стили для виджетов */
+.sidebar-widget {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.widget-title {
+  color: var(--secondary);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 3px solid var(--primary);
+}
+
+.widget-title i {
+  color: var(--primary);
+  margin-right: 8px;
+}
+
+.event-item {
+  padding: 8px 0;
+}
+
+.event-date {
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.event-title {
+  color: var(--dark);
+  font-weight: 500;
+}
+
+.blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 15px;
+  font-style: italic;
+  color: var(--secondary);
+}

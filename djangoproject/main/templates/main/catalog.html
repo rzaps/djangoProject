@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Сорта японского чая</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4"><i class="fas fa-leaf text-danger me-2"></i>Сорта чая</h1>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/img/matcha.jpg' %}" class="card-img-top" alt="Матча">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Матча</h5>
+                    <p class="card-text">Порошковый зеленый чай высшего сорта, используемый в чайных церемониях.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/img/sencha.jpg' %}" class="card-img-top" alt="Сенча">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Сенча</h5>
+                    <p class="card-text">Самый популярный в Японии зеленый чай с освежающим вкусом.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="{% static 'main/img/gyokuro.jpg' %}" class="card-img-top" alt="Гёкуро">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Гёкуро</h5>
+                    <p class="card-text">Элитный чай с нежным сладковатым вкусом и высокой стоимостью.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

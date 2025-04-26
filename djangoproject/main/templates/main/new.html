@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    <title>茶道 - Чайная церемония</title>
+{% endblock %}
+
+{% block content %}
+    <div class="japan-card p-4">
+        <h1 class="text-danger mb-4"><i class="fas fa-leaf me-2"></i> Чайная церемония</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <p class="lead">Японская чайная церемония — это духовная практика, где каждое движение имеет значение.</p>
+
+                <h4 class="text-danger mt-4">Основные этапы:</h4>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item border-0">Подготовка (準備, junbi)</li>
+                    <li class="list-group-item border-0">Очищение (清め, kiyome)</li>
+                    <li class="list-group-item border-0">Приготовление чая (点前, temae)</li>
+                    <li class="list-group-item border-0">Дегустация (喫茶, kissa)</li>
+                    <li class="list-group-item border-0">Завершение (終了, shūryō)</li>
+                </ol>
+{% endblock %}

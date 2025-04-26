@@ -1,0 +1,20 @@
+<nav class="nav-vertical">
+    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">
+        <i class="fas fa-home"></i> <span class="nav-text">Главная</span>
+    </a>
+    <a class="nav-link {% if request.path == '/new/' %}active{% endif %}" href="{% url 'new' %}">
+        <i class="fas fa-leaf"></i> <span class="nav-text">Чайная церемония</span>
+    </a>
+    <a class="nav-link {% if request.path == '/catalog/' %}active{% endif %}" href="{% url 'catalog' %}">
+        <i class="fas fa-list"></i> <span class="nav-text">Сорта чая</span>
+    </a>
+    <a class="nav-link {% if request.path == '/shop/' %}active{% endif %}" href="{% url 'shop' %}">
+        <i class="fas fa-store"></i> <span class="nav-text">Магазин</span>
+    </a>
+    <a class="nav-link" href="#">
+        <i class="fas fa-book"></i> <span class="nav-text">О нас</span>
+    </a>
+    <a class="nav-link" href="#">
+        <i class="fas fa-envelope"></i> <span class="nav-text">Контакты</span>
+    </a>
+</nav>

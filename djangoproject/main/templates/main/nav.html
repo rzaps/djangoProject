@@ -11,6 +11,9 @@
     <a class="nav-link" href="{% url 'blog' %}">
         <i class="fas fa-book"></i> <span class="nav-text">Блог</span>
     </a>
+    <a class="nav-link" href="{% url 'new_post' %}">
+        <i class="fas fa-book"></i> <span class="nav-text">Добавить статью</span>
+    </a>
     <a class="nav-link {% if request.path == '/shop/' %}active{% endif %}" href="{% url 'shop' %}">
         <i class="fas fa-store"></i> <span class="nav-text">Магазин</span>
     </a>

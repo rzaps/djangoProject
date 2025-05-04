@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block right_sidebar %}
+    {% include 'blog/blog_sidebar.html' %}
+{% endblock %}
+
+{% block title %}
+    <title>茶道 - Блог</title>
+{% endblock %}
+
+{% block content %}
+<div class="japan-card p-4 mb-4">
+    <h1 class="text-danger mb-4"><i class="fas fa-book me-2"></i> Блог о японском чае</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <p class="lead">Здесь мы делимся статьями, историями и знаниями о мире японского чая и чайных церемоний.</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="#" class="btn japan-btn">Написать статью</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for post in posts %}
+        <div class="col-lg-8 mb-4">
+            <div class="japan-card p-4 mb-4 shadow rounded-4">
+                <h2 class="text-danger">{{ post.title }}</h2>
+                <p class="text-muted">
+                    <i class="far fa-calendar-alt me-2"></i> {{ post.date|date:"d.m.Y H:i" }}
+                    &nbsp;|&nbsp;
+                    <i class="fas fa-user"></i> {{ post.user.get_full_name|default:post.user.username }}
+                </p>
+
+                <img src="{% static 'main/img/matcha-preparation.jpg' %}" alt="Приготовление матча"
+                     class="img-fluid mb-3 rounded">
+
+                <p class="post-short">{{ post.short_description }}</p>
+                <p class="post-full d-none">{{ post.text }}</p>
+
+                <a href="#" class="btn japan-btn-outline toggle-post">Читать далее</a>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-warning text-center">Постов пока нет.</div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.toggle-post').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const card = btn.closest('.japan-card');
+            const short = card.querySelector('.post-short');
+            const full = card.querySelector('.post-full');
+
+            full.classList.toggle('d-none');
+            short.classList.toggle('d-none');
+
+            btn.textContent = full.classList.contains('d-none') ? 'Читать далее' : 'Скрыть';
+        });
+    });
+});
+</script>
+{% endblock %}

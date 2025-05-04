@@ -8,6 +8,9 @@
     <a class="nav-link {% if request.path == '/catalog/' %}active{% endif %}" href="{% url 'catalog' %}">
         <i class="fas fa-list"></i> <span class="nav-text">Сорта чая</span>
     </a>
+    <a class="nav-link" href="{% url 'blog' %}">
+        <i class="fas fa-book"></i> <span class="nav-text">Блог</span>
+    </a>
     <a class="nav-link {% if request.path == '/shop/' %}active{% endif %}" href="{% url 'shop' %}">
         <i class="fas fa-store"></i> <span class="nav-text">Магазин</span>
     </a>
@@ -17,4 +20,5 @@
     <a class="nav-link" href="#">
         <i class="fas fa-envelope"></i> <span class="nav-text">Контакты</span>
     </a>
+
 </nav>
